@@ -1,0 +1,19 @@
+.navItem {
+    width: 250px;
+    cursor: pointer;
+    color: #fff;
+    background-color: #01172F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.active {
+    background-color: #000;
+}
+
+.nav{
+    display: flex;
+    flex-grow: 1;
+    height: 100%;
+}
