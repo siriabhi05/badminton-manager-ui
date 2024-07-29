@@ -7,6 +7,7 @@ import { Navigate, Route, BrowserRouter, Routes } from 'react-router-dom';
 import VotePage from './components/page/VotePage';
 import SeedPage from './components/page/SeedPage';
 import DrawPage from './components/page/DrawPage';
+import { UserContext } from './context';
 
 function App() {
   const [user, setUser] = useState<string>();
@@ -26,14 +27,16 @@ function App() {
       <div className="backgroundImage"></div>
       {players && !user && <Login players={players} setUser={setUser}></Login>}
       {players && user &&
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Navigate to="/vote" />} />
-            <Route path="/vote" element={<VotePage players={players} user={user} />} />
-            <Route path="/seed" element={<SeedPage />} />
-            <Route path="/draw" element={<DrawPage />} />
-          </Routes>
-        </BrowserRouter>
+        <UserContext.Provider value={user}>
+          <BrowserRouter>
+            <Routes>
+              <Route path="/" element={<Navigate to="/vote" />} />
+              <Route path="/vote" element={<VotePage players={players} user={user} />} />
+              <Route path="/seed" element={<SeedPage />} />
+              <Route path="/draw" element={<DrawPage />} />
+            </Routes>
+          </BrowserRouter>
+        </UserContext.Provider>
 
       }
     </div >

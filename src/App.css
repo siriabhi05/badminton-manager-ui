@@ -31,11 +31,23 @@
   font-weight: 700 !important;
 }
 
-.navContainer {
+.headerContainer {
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
+  z-index: 1;
+  display: block;
+  height: 63px;
+  background-color: #01172F;
+  border-bottom: 1px solid #d3d3d3;
+}
+
+.navContainer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 64px;
   z-index: 1;
   display: block;
   height: 47px;
@@ -44,9 +56,11 @@
 }
 
 .mainContainer {
-  margin-top: 48px;
+  margin-top: 112px;
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 48px);
+  min-height: calc(100vh - 144px);
   flex-grow: 1;
+  margin-bottom: 32px;
+  background-color: #e1e1e1;
 }

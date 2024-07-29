@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 8px 16px;
+    padding: 4px 16px;
     border-radius: 2px;
     font-size: 16px;
     font-weight: 700;
@@ -10,13 +10,13 @@
 }
 
 .odd {
-    background-color: #ADD8E6 !important;
+    background-color: #01172F !important;
     color: #fff !important
 }
 
 .even {
     background-color: #eeeeee !important;
-    color: #233a77 !important;
+    color: #01172F !important;
 }
 
 .voteContainer {
@@ -26,22 +26,28 @@
 }
 
 .oddToggleButton {
-    color: #fff;
+    background-color: #01172F !important;
+    color: #fff !important;
+    border: 1px solid #fff !important;
 }
 
 .evenToggleButton {
-    color: #233a77;
+    background-color: #fff !important;
+    color: #01172F !important;
+    border: 1px solid #01172F !important;
+}
+
+.Mui-selected{
+    background-color: #000 !important;
+    color: #fff !important;
 }
 
 .buttonDiv {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
+    margin: 4px;
+    align-self: flex-end;
 
 }
 
 .voteButton {
-    background-color: #000 !important;
-    margin: 0 !important;
-    min-height: 48px;
+    background-color: #01172F !important;
 }

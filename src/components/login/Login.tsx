@@ -66,7 +66,7 @@ function Login(props: LoginProps) {
                     >
                         {props.players.map(p => <MenuItem key={p} value={p}>{p}</MenuItem>)}
                     </Select>
-                    <TextField className='secret' label="Secret" variant="outlined" onChange={handleSecretChange}></TextField>
+                    <TextField type='password' className='secret' label="Secret" variant="outlined" onChange={handleSecretChange}></TextField>
                 </FormControl>
                 <Button className='button' variant="contained" size="large" onClick={handlePlayClick}>Play</Button>
             </div>
