@@ -110,7 +110,7 @@ function VoteContainer(props: VoteContainerProps) {
     return (
         <div className="voteContainer">
             {msg.msg && <Alert className='alert' variant="filled" severity={msg.type}>{msg.msg}</Alert>}
-            {player && props.players.map((p, i) => <Vote
+            {player && props.players.filter(p => p !== player.name).map((p, i) => <Vote
                 key={p}
                 voteType={player.voteGiven.first === p
                     ? "First"
