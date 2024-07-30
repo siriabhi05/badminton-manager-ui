@@ -126,7 +126,7 @@ function VoteContainer(props: VoteContainerProps) {
                 name={p} index={i}></Vote>)}
 
             <div className="buttonDiv">
-                <Button className='voteButton' variant="contained" size="large" onClick={handleVoteClick}>Vote</Button>
+                {new Date() < new Date("2024-07-31") && <Button className='voteButton' variant="contained" size="large" onClick={handleVoteClick}>Vote</Button>}
             </div>
         </div>)
 }
