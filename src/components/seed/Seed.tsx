@@ -1,6 +1,6 @@
 import { Accordion, AccordionDetails, AccordionSummary } from "@mui/material";
 import { PlayerSeed } from "../../models/playerModel";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { apiService } from "../../service/apiService";
 import { API_URL } from "../../config";
 import "./Seed.css"
@@ -40,13 +40,14 @@ function Seed(props: SeedProp) {
 function SeedContainer() {
 
     const [seeds, setSeeds] = useState<PlayerSeed[]>([])
-    const getSeeds = async () => {
+    const getSeeds = useCallback(async () => {
         const result = await apiService.get(`${API_URL}/seed`)
         if (result?.data) setSeeds(result.data as PlayerSeed[])
-    }
+    }, [])
+
     useEffect(() => {
         getSeeds()
-    })
+    }, [getSeeds])
     return (
         <div className="seedContainer">
             {seeds.map((s, i) => <Seed seed={s} key={i} index={i} />)}

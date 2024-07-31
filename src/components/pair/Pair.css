@@ -1,0 +1,86 @@
+.createPairContainer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.pairContainer,
+.internalPairContainer,
+.externalPairContainer,
+.pairs {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    /* align-items: center;
+    justify-content: center; */
+}
+
+.pair {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.evenPair {
+    background-color: #01172F;
+    color: #fff;
+}
+
+.oddPair {
+    background-color: #fff;
+    color: #01172F;
+}
+
+.editablePlayer {
+    display: flex;
+    flex-direction: row;
+}
+
+.pairContainerHeader {
+    display: flex;
+    align-items: flex-start;
+    font-size: 18px;
+    font-weight: 600;
+    color: #01172F;
+    padding: 16px;
+    border-bottom: 1px solid #01172F;
+}
+
+.createPairButton,
+.updateExternalPairButton {
+    background-color: #01172F !important;
+}
+
+.createPairLabel {
+    font-size: 16px;
+    font-weight: 600;
+    color: #01172F;
+    margin-bottom: 4px;
+}
+
+.evenEditableText {
+    background-color: #01172F !important;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 48px;
+}
+
+.oddEditableText {
+    background-color: #fff !important;
+    color: #01172F;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    margin-left: 48px;
+}
+
+.slash {
+    margin: 0 4px;
+}

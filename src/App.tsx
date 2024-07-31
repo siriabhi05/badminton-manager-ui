@@ -8,6 +8,7 @@ import VotePage from './components/page/VotePage';
 import SeedPage from './components/page/SeedPage';
 import DrawPage from './components/page/DrawPage';
 import { UserContext } from './context';
+import PairPage from './components/page/PairPage';
 
 function App() {
   const [user, setUser] = useState<string>();
@@ -34,6 +35,7 @@ function App() {
               <Route path="/vote" element={<VotePage players={players} user={user} />} />
               <Route path="/seed" element={<SeedPage />} />
               <Route path="/draw" element={<DrawPage />} />
+              <Route path="/pairs" element={<PairPage />} />
             </Routes>
           </BrowserRouter>
         </UserContext.Provider>

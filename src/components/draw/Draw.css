@@ -1,0 +1,55 @@
+.createDrawContainer {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.drawContainer,
+.drawGroupContainer,
+.draws {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.draw {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.evenDraw {
+    background-color: #01172F;
+    color: #fff;
+}
+
+.oddDraw {
+    background-color: #fff;
+    color: #01172F;
+}
+
+.drawContainerHeader {
+    display: flex;
+    align-items: flex-start;
+    font-size: 18px;
+    font-weight: 600;
+    color: #01172F;
+    padding: 16px;
+    border-bottom: 1px solid #01172F;
+}
+
+.createDrawButton {
+    background-color: #01172F !important;
+}
+
+.createDrawLabel {
+    font-size: 16px;
+    font-weight: 600;
+    color: #01172F;
+    margin-bottom: 4px;
+}

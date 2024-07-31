@@ -1,7 +1,7 @@
 import { Alert, Button, ToggleButton, ToggleButtonGroup } from "@mui/material";
 import "./Vote.css";
 import { Player, VoteGiven } from "../../models/playerModel";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { apiService } from "../../service/apiService";
 import { API_URL } from "../../config";
 
@@ -59,13 +59,14 @@ function VoteContainer(props: VoteContainerProps) {
 
     const [player, setPlayer] = useState<Player>();
     const [msg, setMsg] = useState<MsgType>({ type: "error" });
-    const getVoteGiven = async () => {
+
+    const getVoteGiven = useCallback(async () => {
         const result = await apiService.get(`${API_URL}/votegiven?user=${props.user}`)
         if (result?.data) {
             const voteGiven = result.data as VoteGiven
             setPlayer({ name: props.user, voteGiven: voteGiven })
         }
-    }
+    }, [props.user])
 
     const onVoted = (name: string, voteType: VoteType) => {
         setPlayer(player => {
@@ -105,7 +106,7 @@ function VoteContainer(props: VoteContainerProps) {
 
     useEffect(() => {
         getVoteGiven()
-    }, [])
+    }, [getVoteGiven])
 
     return (
         <div className="voteContainer">
