@@ -1,0 +1,29 @@
+.rulesContainer {
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 600;
+    color: #01172F;
+}
+
+.rules {
+    padding: 8px 16px;
+    display: flex;
+    flex-grow: 1;
+
+}
+
+.oddRule {
+    background-color: #01172F !important;
+    color: #fff !important;
+}
+
+.evenRule {
+    background-color: #fff !important;
+    color: #01172F !important;
+}
+
+.rule {
+    display: flex;
+    align-self: flex-start;
+}

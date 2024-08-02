@@ -1,13 +1,15 @@
+import { useContext } from "react"
 import Footer from "../footer/Footer"
 import Header from "../header/Header"
 import Nav from "../nav/Nav"
 import VoteContainer from "../vote/Vote"
+import { UserContext } from "../../context"
 
 interface VotePageProps {
     players: string[],
-    user: string
 }
 function VotePage(props: VotePageProps) {
+    const user = useContext(UserContext)
     return (
         <>
             <div className='headerContainer'>
@@ -17,7 +19,7 @@ function VotePage(props: VotePageProps) {
                 <Nav></Nav>
             </div>
             <div className='mainContainer'>
-                <VoteContainer players={props.players} user={props.user}></VoteContainer>
+                {user && props.players.length > 0 && <VoteContainer players={props.players} user={user}></VoteContainer>}
             </div>
             <Footer></Footer>
         </>

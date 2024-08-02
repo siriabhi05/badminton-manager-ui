@@ -3,7 +3,7 @@ import image from "../../images/Shuttle.jpg"
 import { UserContext } from "../../context"
 import "./Header.css"
 function Header() {
-    const user = useContext(UserContext);
+    const user = useContext(UserContext) ?? "Anonymus User";
 
     return (
         < div className="header" >

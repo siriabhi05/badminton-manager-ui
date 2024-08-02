@@ -9,6 +9,8 @@ function Nav() {
             <NavItem text="Seed" isActive={location.pathname.includes("seed")} />
             <NavItem text="Pairs" isActive={location.pathname.includes("pairs")} />
             <NavItem text="Draw" isActive={location.pathname.includes("draw")} />
+            <NavItem text="Rules" isActive={location.pathname.includes("rules")} />
+            <NavItem text="Schedule" isActive={location.pathname.includes("schedule")} />
         </div>)
 }
 

@@ -9,6 +9,8 @@ import SeedPage from './components/page/SeedPage';
 import DrawPage from './components/page/DrawPage';
 import { UserContext } from './context';
 import PairPage from './components/page/PairPage';
+import RulesPage from './components/page/RulesPage';
+import SchedulePage from './components/page/SchedulePage';
 
 function App() {
   const [user, setUser] = useState<string>();
@@ -26,21 +28,19 @@ function App() {
   return (
     <div className="App">
       <div className="backgroundImage"></div>
-      {players && !user && <Login players={players} setUser={setUser}></Login>}
-      {players && user &&
-        <UserContext.Provider value={user}>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/" element={<Navigate to="/vote" />} />
-              <Route path="/vote" element={<VotePage players={players} user={user} />} />
-              <Route path="/seed" element={<SeedPage />} />
-              <Route path="/draw" element={<DrawPage />} />
-              <Route path="/pairs" element={<PairPage />} />
-            </Routes>
-          </BrowserRouter>
-        </UserContext.Provider>
-
-      }
+      <UserContext.Provider value={user}>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Navigate to="/draw" />} />
+            <Route path="/vote" element={user ? <VotePage players={players} /> : <Login players={players} setUser={setUser} />} />
+            <Route path="/seed" element={<SeedPage />} />
+            <Route path="/draw" element={<DrawPage />} />
+            <Route path="/pairs" element={<PairPage />} />
+            <Route path="/rules" element={<RulesPage />} />
+            <Route path="/schedule" element={<SchedulePage />} />
+          </Routes>
+        </BrowserRouter>
+      </UserContext.Provider>
     </div >
   );
 }
